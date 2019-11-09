@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sesni/feelGood.dart';
 
-class Login extends StatelessWidget {
+class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -179,7 +179,7 @@ class Login extends StatelessWidget {
                                   builder: (context) => Feeling()));
                         },
                         child: Text(
-                          "Log In",
+                          "Sign in",
                           style: TextStyle(
                               color: Colors.blueGrey[700], fontSize: 20),
                         ),

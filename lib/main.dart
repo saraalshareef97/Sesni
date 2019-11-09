@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sesni/login.dart';
+import 'package:sesni/Sign_up.dart';
+import 'package:sesni/sign_in.dart';
 
 void main() => runApp(MyApp());
 
@@ -90,7 +91,7 @@ class Welcome extends StatelessWidget {
                             BorderSide(color: Colors.blueGrey[700], width: 0)),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
+                          MaterialPageRoute(builder: (context) => LogIn()));
                     },
                     child: Text(
                       "Let's chat!",
