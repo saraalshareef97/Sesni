@@ -108,7 +108,8 @@ class Body extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Chat()),
+                          MaterialPageRoute(
+                              builder: (context) => WebViewInFlutter()),
                         );
                       },
                       child: Text(
@@ -151,7 +152,8 @@ class Body extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Chat()),
+                                        builder: (context) =>
+                                            WebViewInFlutter()),
                                   );
                                 },
                                 child: Text(
@@ -190,7 +192,8 @@ class Body extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Chat()),
+                                        builder: (context) =>
+                                            WebViewInFlutter()),
                                   );
                                 },
                                 child: Text(
@@ -233,7 +236,8 @@ class Body extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Chat()),
+                                        builder: (context) =>
+                                            WebViewInFlutter()),
                                   );
                                 },
                                 child: Text(
@@ -272,7 +276,8 @@ class Body extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Chat()));
+                                          builder: (context) =>
+                                              WebViewInFlutter()));
                                 },
                                 child: Text(
                                   "Emotional",
