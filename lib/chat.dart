@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:sesni/feelGood.dart';
 import 'package:sesni/log_out.dart';
 
 class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
             resizeToAvoidBottomPadding: false,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(65.0),
               child: AppBar(
+                leading: IconButton(
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
                 centerTitle: true,
                 backgroundColor: Colors.white,
                 title: Container(
@@ -30,19 +41,22 @@ class Chat extends StatelessWidget {
                         style: TextStyle(color: Colors.black, fontSize: 20),
                       )
                     ])),
+                actions: <Widget>[
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LogOut()));
+                    },
+                    icon: Icon(
+                      Icons.home,
+                      color: Colors.black,
+                    ),
+                  )
+                ],
               ),
             ),
-            body: Stack(children: [
-              Container(
-                  decoration: new BoxDecoration(
-                      image: DecorationImage(
-                fit: BoxFit.cover,
-                colorFilter: new ColorFilter.mode(
-                    Colors.white.withOpacity(0.3), BlendMode.srcATop),
-                image: ExactAssetImage('images/waa.jpg'),
-              ))),
-              _sensiChat(context)
-            ])));
+            body: _sensiChat(context)));
   }
 }
 
@@ -50,7 +64,7 @@ Widget _sensiChat(BuildContext context) {
   return WebviewScaffold(
     url:
         'https://assistant-chat-eu-gb.watsonplatform.net/web/public/96227687-878f-4a2a-875e-faa4f5b2eb92',
-    hidden: true,
+    hidden: false,
   );
 
 // Widget _textfield() => Container(

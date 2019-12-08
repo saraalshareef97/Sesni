@@ -72,7 +72,7 @@ class Welcome extends StatelessWidget {
                       child: Container(
                         margin: EdgeInsets.fromLTRB(15, 15, 0, 10),
                         child: Text(
-                            "Welcome!. Feel free to tell me anything, I'm your friend that will always be here for you, click the button below to start.",
+                            "Welcome! Feel free to tell me anything, I'm your friend that will always be here for you, click the button below to start.",
                             style: TextStyle(
                                 fontSize: 14, color: Colors.blueGrey[700])),
                       )),
