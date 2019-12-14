@@ -1,9 +1,36 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sesni/Sign_up.dart';
 import 'package:sesni/feelGood.dart';
 
-class LogIn extends StatelessWidget {
+class LogIn extends StatefulWidget {
+  @override
+  _LogInState createState() => _LogInState();
+}
+
+class _LogInState extends State<LogIn> {
+  final TextEditingController textController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    textController.addListener(_printLatestValue);
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the widget tree.
+    // This also removes the _printLatestValue listener.
+    textController.dispose();
+    super.dispose();
+  }
+
+  _printLatestValue() {
+    print("Let's Chat ${textController.text}");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,6 +51,7 @@ class LogIn extends StatelessWidget {
                               Container(
                                 margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
                                 child: TextField(
+                                  controller: textController,
                                   style: TextStyle(color: Colors.red[50]),
                                   cursorColor: Colors.red[50],
                                   decoration: InputDecoration(
@@ -40,72 +68,72 @@ class LogIn extends StatelessWidget {
                                       ),
                                       filled: false,
                                       prefixIcon: Icon(
-                                        Icons.email,
+                                        Icons.person,
                                         color: Colors.red[50],
                                       ),
-                                      hintText: 'Your Email',
+                                      hintText: 'Your Name',
                                       hintStyle:
                                           TextStyle(color: Colors.red[50])),
                                 ),
                               ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
-                                child: TextField(
-                                  style: TextStyle(color: Colors.red[50]),
-                                  cursorColor: Colors.red[50],
-                                  decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Colors.red[50])),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Colors.red[50], width: 1.0),
-                                      ),
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(5)),
-                                      ),
-                                      filled: false,
-                                      fillColor: Colors.red[50],
-                                      prefixIcon: Icon(
-                                        Icons.lock,
-                                        color: Colors.red[50],
-                                      ),
-                                      hintText: 'Password',
-                                      // icon:
-                                      hintStyle:
-                                          TextStyle(color: Colors.red[50])),
-                                ),
-                              ),
+                              // Container(
+                              //   margin: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                              //   child: TextField(
+                              //     style: TextStyle(color: Colors.red[50]),
+                              //     cursorColor: Colors.red[50],
+                              //     decoration: InputDecoration(
+                              //         enabledBorder: OutlineInputBorder(
+                              //             borderSide: BorderSide(
+                              //                 color: Colors.red[50])),
+                              //         focusedBorder: OutlineInputBorder(
+                              //           borderSide: BorderSide(
+                              //               color: Colors.red[50], width: 1.0),
+                              //         ),
+                              //         border: OutlineInputBorder(
+                              //           borderRadius: BorderRadius.all(
+                              //               Radius.circular(5)),
+                              //         ),
+                              //         filled: false,
+                              //         fillColor: Colors.red[50],
+                              //         prefixIcon: Icon(
+                              //           Icons.lock,
+                              //           color: Colors.red[50],
+                              //         ),
+                              //         hintText: 'Password',
+                              //         // icon:
+                              //         hintStyle:
+                              //             TextStyle(color: Colors.red[50])),
+                              //   ),
+                              // ),
                             ])),
                   ],
                 ),
-                Container(
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.fromLTRB(0, 85, 15, 0),
-                    child: Text.rich(
-                      TextSpan(
-                        text: 'New to Sensi? ',
-                        style: TextStyle(
-                            color: Colors.red[50]), // default text style
-                        children: <TextSpan>[
-                          TextSpan(
-                              recognizer: new TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SignUp()),
-                                  );
-                                },
-                              text: ' Sign up ',
-                              style: TextStyle(
-                                  color: Colors.red[50],
-                                  decoration: TextDecoration.underline,
-                                  fontWeight: FontWeight.w500)),
-                        ],
-                      ),
-                    )),
+                // Container(
+                //     alignment: Alignment.center,
+                //     margin: EdgeInsets.fromLTRB(0, 85, 15, 0),
+                //     child: Text.rich(
+                //       TextSpan(
+                //         text: 'New to Sensi? ',
+                //         style: TextStyle(
+                //             color: Colors.red[50]), // default text style
+                //         children: <TextSpan>[
+                //           TextSpan(
+                //               recognizer: new TapGestureRecognizer()
+                //                 ..onTap = () {
+                //                   Navigator.push(
+                //                     context,
+                //                     MaterialPageRoute(
+                //                         builder: (context) => SignUp()),
+                //                   );
+                //                 },
+                //               text: ' Sign up ',
+                //               style: TextStyle(
+                //                   color: Colors.red[50],
+                //                   decoration: TextDecoration.underline,
+                //                   fontWeight: FontWeight.w500)),
+                //         ],
+                //       ),
+                //     )),
                 Container(
                   margin: EdgeInsets.fromLTRB(0, 350, 0, 0),
                   alignment: Alignment.center,
@@ -118,13 +146,60 @@ class LogIn extends StatelessWidget {
                             side: BorderSide(
                                 color: Colors.blueGrey[700], width: 0)),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Feeling()));
+                          return showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                backgroundColor: Colors.red[50],
+                                // Retrieve the text the that user has entered by using the
+                                // TextEditingController.
+                                content: Container(
+                                  height: 100,
+                                  child: Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            'Welcome ',
+                                            style: TextStyle(
+                                                color: Colors.blueGrey[700],
+                                                fontSize: 18),
+                                          ),
+                                          Text(textController.text,
+                                              style: TextStyle(
+                                                  color: Colors.blueGrey[700],
+                                                  fontSize: 18)),
+                                        ],
+                                      ),
+                                      Container(
+                                        margin:
+                                            EdgeInsets.fromLTRB(0, 25, 0, 0),
+                                        alignment: Alignment.bottomCenter,
+                                        child: FlatButton(
+                                          child: Text(
+                                              "Let's start our conversation"),
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                CupertinoPageRoute(
+                                                    builder: (context) =>
+                                                        Feeling()));
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => Feeling()));
                         },
                         child: Text(
-                          "Log In",
+                          "Submit",
                           style: TextStyle(
                               color: Colors.blueGrey[700], fontSize: 20),
                         ),
@@ -149,7 +224,7 @@ class Body extends StatelessWidget {
         image: ExactAssetImage('images/wb2.jpg'),
       ))),
       Container(
-          margin: EdgeInsets.fromLTRB(10, 80, 0, 0),
+          margin: EdgeInsets.fromLTRB(10, 150, 0, 0),
           alignment: Alignment.topCenter,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -157,11 +232,11 @@ class Body extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage: AssetImage('images/logo.png'),
                   backgroundColor: Colors.red[50],
-                  radius: 45,
+                  radius: 50,
                 ),
                 Container(
-                  height: 85,
-                  width: 285,
+                  height: 90,
+                  width: 270,
                   margin: EdgeInsets.fromLTRB(5, 0, 10, 0),
                   padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
@@ -174,7 +249,7 @@ class Body extends StatelessWidget {
                   child: Container(
                       margin: EdgeInsets.only(top: 5),
                       child: Text(
-                        "Welcome Back, login to continue.",
+                        "Hello my friend :)  Kindly, tell me your name..",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.blueGrey[700],

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:sesni/feelGood.dart';
 import 'package:sesni/log_out.dart';
 
-class Chat extends StatelessWidget {
+class Chatt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

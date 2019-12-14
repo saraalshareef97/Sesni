@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sesni/chat.dart';
 
@@ -62,176 +63,180 @@ class Body extends StatelessWidget {
               ),
             ],
           ),
-          Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(20, 50, 0, 10),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage('images/saddd.png'),
-                              radius: 60,
+          Container(
+            margin: EdgeInsets.only(top: 30),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                        child: Stack(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.bottomLeft,
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage('images/saddd.png'),
+                                radius: 60,
+                              ),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
-                            child: SizedBox(
-                                width: 95,
-                                height: 50,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(25.0),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Chat()),
-                                    );
-                                  },
-                                  child: Text(
-                                    "Sad",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.red[50], fontSize: 17),
-                                  ),
-                                  color: Colors.blueGrey[700],
-                                )),
-                          )
-                        ],
-                      )),
-                  Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage('images/sad.png'),
-                              radius: 60,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
-                            child: SizedBox(
-                                width: 95,
-                                height: 50,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(25.0),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Chat()),
-                                    );
-                                  },
-                                  child: Text(
-                                    "Broken",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.red[50], fontSize: 17),
-                                  ),
-                                  color: Colors.blueGrey[700],
-                                )),
-                          )
-                        ],
-                      )),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage('images/qssss.png'),
-                              radius: 60,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
-                            child: SizedBox(
-                                width: 110,
-                                height: 50,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(25.0),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Chat()),
-                                    );
-                                  },
-                                  child: Text(
-                                    "Stressed",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.red[50], fontSize: 17),
-                                  ),
-                                  color: Colors.blueGrey[700],
-                                )),
-                          )
-                        ],
-                      )),
-                  Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                      child: Stack(
-                        children: <Widget>[
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage('images/qvftf.png'),
-                              radius: 60,
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
-                            child: SizedBox(
-                                width: 110,
-                                height: 50,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(25.0),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
+                            Container(
+                              margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
+                              child: SizedBox(
+                                  width: 110,
+                                  height: 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
                                         context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Chat()));
-                                  },
-                                  child: Text(
-                                    "Emotional",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.red[50], fontSize: 15.5),
-                                  ),
-                                  color: Colors.blueGrey[700],
-                                )),
-                          )
-                        ],
-                      )),
-                ],
-              ),
-            ],
+                                        CupertinoPageRoute(
+                                            builder: (context) => Chatt()),
+                                      );
+                                    },
+                                    child: Text(
+                                      "Sad",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.red[50], fontSize: 17),
+                                    ),
+                                    color: Colors.blueGrey[700],
+                                  )),
+                            )
+                          ],
+                        )),
+                    Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                        child: Stack(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.bottomLeft,
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage('images/sad.png'),
+                                radius: 60,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
+                              child: SizedBox(
+                                  width: 110,
+                                  height: 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          CupertinoPageRoute(
+                                              builder: (context) => Chatt()));
+                                    },
+                                    child: Text(
+                                      "Borken",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.red[50],
+                                          fontSize: 15.5),
+                                    ),
+                                    color: Colors.blueGrey[700],
+                                  )),
+                            )
+                          ],
+                        )),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                        child: Stack(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.bottomLeft,
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage('images/qssss.png'),
+                                radius: 60,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
+                              child: SizedBox(
+                                  width: 110,
+                                  height: 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        CupertinoPageRoute(
+                                            builder: (context) => Chatt()),
+                                      );
+                                    },
+                                    child: Text(
+                                      "Stressed",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.red[50], fontSize: 17),
+                                    ),
+                                    color: Colors.blueGrey[700],
+                                  )),
+                            )
+                          ],
+                        )),
+                    Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                        child: Stack(
+                          children: <Widget>[
+                            Container(
+                              alignment: Alignment.bottomLeft,
+                              child: CircleAvatar(
+                                backgroundImage: AssetImage('images/qvftf.png'),
+                                radius: 60,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.fromLTRB(45, 95, 25, 0),
+                              child: SizedBox(
+                                  width: 110,
+                                  height: 50,
+                                  child: RaisedButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          new BorderRadius.circular(25.0),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          CupertinoPageRoute(
+                                              builder: (context) => Chatt()));
+                                    },
+                                    child: Text(
+                                      "Emotional",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.red[50],
+                                          fontSize: 15.5),
+                                    ),
+                                    color: Colors.blueGrey[700],
+                                  )),
+                            )
+                          ],
+                        )),
+                  ],
+                ),
+              ],
+            ),
           ),
           Container(
               alignment: Alignment.center,
@@ -257,8 +262,8 @@ class Body extends StatelessWidget {
                           onPressed: () {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                    builder: (context) => Chat()));
+                                CupertinoPageRoute(
+                                    builder: (context) => Chatt()));
                           },
                           child: Text(
                             "Want to laugh, just chatting",
@@ -271,32 +276,6 @@ class Body extends StatelessWidget {
                   )
                 ],
               )),
-          // Container(
-          //   margin: EdgeInsets.fromLTRB(10, 10, 15, 0),
-          //   child: SizedBox(
-          //       width: double.infinity,
-          //       height: 70,
-          //       child: RaisedButton(
-          //         shape: RoundedRectangleBorder(
-          //           borderRadius: new BorderRadius.circular(5.0),
-          //         ),
-          //         onPressed: () {
-          //           Navigator.push(
-          //             context,
-          //             MaterialPageRoute(builder: (context) => Chat()),
-          //           );
-          //         },
-          //         child: Text(
-          //           "Want to laugh, just chatting",
-          //           textAlign: TextAlign.center,
-          //           style: TextStyle(
-          //             color: Colors.red[50],
-          //             fontSize: 21,
-          //           ),
-          //         ),
-          //         color: Colors.blueGrey[700],
-          //       )),
-          // ),
         ]),
       ],
     );
