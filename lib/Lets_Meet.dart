@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:sesni/Sign_up.dart';
 import 'package:sesni/feelGood.dart';
 
-class LogIn extends StatefulWidget {
+class LetsMeet extends StatefulWidget {
   @override
-  _LogInState createState() => _LogInState();
+  _LetsMeetState createState() => _LetsMeetState();
 }
 
-class _LogInState extends State<LogIn> {
+class _LetsMeetState extends State<LetsMeet> {
   final TextEditingController textController = TextEditingController();
 
   @override

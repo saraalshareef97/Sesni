@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sesni/Lets_Meet.dart';
 import 'package:sesni/feelGood.dart';
-import 'package:sesni/sign_in.dart';
 
 void main() => runApp(MyApp());
 
@@ -92,7 +92,7 @@ class Welcome extends StatelessWidget {
                             BorderSide(color: Colors.blueGrey[700], width: 0)),
                     onPressed: () {
                       Navigator.push(context,
-                          CupertinoPageRoute(builder: (context) => LogIn()));
+                          CupertinoPageRoute(builder: (context) => LetsMeet()));
                     },
                     child: Text(
                       "Let's Begin",

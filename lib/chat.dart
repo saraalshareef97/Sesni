@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:sesni/log_out.dart';
+import 'package:sesni/Colsing.dart';
 
 class Chatt extends StatelessWidget {
   @override
@@ -45,7 +45,7 @@ class Chatt extends StatelessWidget {
                     onPressed: () {
                       Navigator.pop(context);
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LogOut()));
+                          MaterialPageRoute(builder: (context) => Closing()));
                     },
                     icon: Icon(
                       Icons.home,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sesni/main.dart';
 
-class LogOut extends StatelessWidget {
+class Closing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
